@@ -1,0 +1,6 @@
+{
+  "name": "Interactive Digital Clock & Timer",
+  "description": "A simple, clean digital clock and timer application featuring a 12-hour AM/PM clock and a customizable countdown timer with browser alert systems.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,232 @@
+/* 
+  style.css
+  Interactive Digital Clock & Timer - Student Project
+  Theme: Clean Minimalism
+*/
+
+/* General page styling */
+body {
+    background-color: #ffffff; /* pure white background */
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Header style from design */
+header, #app-title {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 32px;
+    color: #2c3e50;
+    margin: 0;
+    border-bottom: 2px solid #3b82f6;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* Main container holding the clock and timer sections */
+.container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Responsive flex direction for mobile view */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+/* Card styling from Clean Minimalism design */
+.card {
+    background-color: #f9fafb;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 30px;
+    width: 380px;
+    max-width: 100%;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    box-sizing: border-box;
+}
+
+/* Section titles inside cards */
+.card h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #4b5563;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Big clock numbers */
+.clock-display {
+    font-size: 48px;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 10px;
+    font-family: monospace;
+}
+
+/* Date styling below the clock */
+.date-display {
+    font-size: 18px;
+    color: #6b7280;
+    margin-bottom: 10px;
+}
+
+/* Timer remaining time text */
+.timer-display {
+    font-size: 56px;
+    font-weight: bold;
+    color: #3b82f6;
+    margin: 20px 0;
+    font-family: monospace;
+}
+
+/* Input group styling for timer fields */
+.input-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Style for individual time input fields */
+.time-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-input-container label {
+    display: block;
+    font-size: 10px;
+    color: #6b7280;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+.timer-input {
+    width: 70px;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 18px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+/* Focus effect on input box */
+.timer-input:focus {
+    border-color: #3b82f6;
+}
+
+/* Disable spinner buttons */
+.timer-input::-webkit-outer-spin-button,
+.timer-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.timer-input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Button group styled as 2x2 grid */
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+}
+
+/* General button styling */
+.btn {
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    outline: none;
+}
+
+/* Primary buttons (Start) */
+#btn-start {
+    background-color: #3b82f6;
+}
+#btn-start:hover:not(:disabled) {
+    background-color: #2563eb;
+}
+
+/* Secondary buttons (Pause & Resume) */
+#btn-pause, #btn-resume {
+    background-color: #6b7280;
+}
+#btn-pause:hover:not(:disabled), #btn-resume:hover:not(:disabled) {
+    background-color: #4b5563;
+}
+
+/* Danger / Reset button */
+#btn-reset {
+    background-color: #ef4444;
+}
+#btn-reset:hover:not(:disabled) {
+    background-color: #dc2626;
+}
+
+/* Active touch state */
+.btn:active:not(:disabled) {
+    transform: scale(0.97);
+}
+
+/* Disabled button state */
+.btn:disabled {
+    background-color: #e2e8f0;
+    color: #a0aec0;
+    cursor: not-allowed;
+}
+
+/* Status message for timer */
+.timer-message {
+    height: 24px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #dc2626;
+}
+
+/* Flash effect for completion */
+.flash-message {
+    animation: flash 1s infinite;
+}
+
+@keyframes flash {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}

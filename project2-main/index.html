@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Digital Clock & Timer</title>
+    <!-- Load our simple, clean student styling -->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Page main heading -->
+      <h1 id="app-title">Interactive Digital Clock & Timer</h1>
+      
+      <!-- SECTION 1: Digital Clock Card -->
+      <div class="card" id="clock-section">
+        <h2>Digital Clock</h2>
+        <!-- Large real-time clock numbers -->
+        <div class="clock-display" id="clock-display">00:00:00 AM</div>
+        <!-- Simple text displaying current day and date -->
+        <div class="date-display" id="date-display">Date Loading...</div>
+      </div>
+      
+      <!-- SECTION 2: Countdown Timer Card -->
+      <div class="card" id="timer-section">
+        <h2>Countdown Timer</h2>
+        
+        <!-- Large countdown remaining display -->
+        <div class="timer-display" id="timer-display">00:00</div>
+        
+        <!-- Timer set-up inputs -->
+        <div class="input-group">
+          <!-- Minutes box -->
+          <div class="time-input-container">
+            <label for="minutes-input">Minutes</label>
+            <input 
+              type="number" 
+              id="minutes-input" 
+              class="timer-input" 
+              placeholder="0" 
+              min="0" 
+            />
+          </div>
+          <!-- Seconds box -->
+          <div class="time-input-container">
+            <label for="seconds-input">Seconds</label>
+            <input 
+              type="number" 
+              id="seconds-input" 
+              class="timer-input" 
+              placeholder="0" 
+              min="0" 
+              max="59" 
+            />
+          </div>
+        </div>
+        
+        <!-- Timer buttons -->
+        <div class="button-group">
+          <button id="btn-start" class="btn">Start</button>
+          <!-- Pause, Resume, Reset are disabled on initial load -->
+          <button id="btn-pause" class="btn" disabled>Pause</button>
+          <button id="btn-resume" class="btn" disabled>Resume</button>
+          <button id="btn-reset" class="btn" disabled>Reset</button>
+        </div>
+        
+        <!-- Completed alarm message display -->
+        <div class="timer-message" id="timer-message"></div>
+      </div>
+    </div>
+
+    <!-- Load our simple clock logic -->
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>
